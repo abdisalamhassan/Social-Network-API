@@ -60,7 +60,7 @@ const userController = {
            }
            res.json(dbUserData);
        })
-       .catch((err)+> res.status(400).json(err));
+       .catch((err)=> res.status(400).json(err));
    },
 
    addFriend({ params }, res ){
@@ -80,7 +80,7 @@ const userController = {
            { new: true }
        )
        .then((dbUserData) => {
-           if(!dbUserData) => {
+           if(!dbUserData) {
                res.status(404).json({message: 'No user found with this id'});
                return;
            }
