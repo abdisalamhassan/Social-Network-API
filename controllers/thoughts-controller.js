@@ -27,7 +27,7 @@ const thoughtController = {
             res.status(400).json(err);
         });
     },
-    addThought({ params, body }, res) {
+    createThoughts({ params, body }, res) {
         Thought.create(body)
             .then(({ _id }) => {
                 return User.findOneAndUpdate(
